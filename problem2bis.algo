@@ -1,0 +1,52 @@
+// creation de la fonction dot_product qui calcule le produit scalaire
+
+FUNCTION dot_product(v1: ARRAY_OF FLOAT, v2 : ARRAY_OF FLOAT) : FLOAT
+VAR
+    len1, len2 ,i : INTEGER ;
+    ps : FLOAT ;
+BEGIN
+    
+    len1:= v1.length ;
+    len2:= v2.length;
+   
+   // vérifier la taille de deux vecteurs qui doivent avoir la même dimension
+
+   IF (len1 <> len2) THEN
+    
+    write ( "ERREUR! Les deux vecteures doivent avoir la même dimension")
+
+   END_IF
+
+   // calcul de produit scalaire
+
+   ps := 0 ;
+
+   FOR i FROM 0 TO len1-1   DO
+    
+    ps = ps + ( v1[i] * v2[i] );
+   
+   END_FOR
+
+    RETURN (ps) ;
+END
+
+// Algorithme principal pour vérifier si les vecteurs sont orthogonaux
+
+ALGORITHM Orthogonaux
+VAR
+    
+
+BEGIN
+    
+    ort = dot_product (v1: ARRAY_OF FLOAT, v2 : ARRAY_OF FLOAT, VAR ps: FLOAT);
+
+    IF (ort = 0) THEN
+      
+      Write("les deux vecteurs sont orthogonaux");
+
+    ELSE
+      
+      Write("les deux vecteurs ne sont pas orthogonaux");
+
+    END_IF
+END

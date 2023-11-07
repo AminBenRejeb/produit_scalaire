@@ -1,0 +1,23 @@
+ALGORITHM Somme_differents
+VAR
+    tab1 : ARRAY_OF INTEGER[n];
+    tab2 : ARRAY_OF INTEGER[m];
+    i,j,som : INTEGER
+
+
+BEGIN
+     // calcul de sommes des éléments différents
+     
+     som := 0;
+     FOR i FROM 0 TO n-1   DO
+      
+      FOR j FROM 0 TO m-1   DO
+      
+          IF (tab1[i]<> tab2 [j]) THEN
+            som = som + tab1[i] + tab2[j];
+          END_IF
+           
+           END_FOR
+
+         END_FOR
+END
